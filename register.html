@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBER ARENA — Register</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><i class="bi bi-controller me-2"></i>CYBER ARENA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="register.html">Register & Pricing</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <section class="mb-5">
+      <h2 class="text-center mb-4 text-uppercase">Gaming Lounge Rates</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="card custom-card text-center p-3 h-100">
+            <div class="card-body">
+              <h3 class="h4 card-title text-info">Standard Zone</h3>
+              <p class="display-6 my-3 fw-bold">$3<small class="fs-6 text-secondary">/hour</small></p>
+              <ul class="list-unstyled text-secondary mb-4">
+                <li><i class="bi bi-check2 text-info me-2"></i>Full HD 144Hz Monitors</li>
+                <li><i class="bi bi-check2 text-info me-2"></i>RTX 3060 / i5</li>
+                <li><i class="bi bi-check2 text-info me-2"></i>HyperX Gaming Gear</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card custom-card text-center p-3 h-100 border-info">
+            <div class="card-body">
+              <span class="badge bg-danger mb-2">POPULAR</span>
+              <h3 class="h4 card-title text-info">VIP Lounge</h3>
+              <p class="display-6 my-3 fw-bold">$5<small class="fs-6 text-secondary">/hour</small></p>
+              <ul class="list-unstyled text-secondary mb-4">
+                <li><i class="bi bi-check2 text-info me-2"></i>2K 240Hz Monitors</li>
+                <li><i class="bi bi-check2 text-info me-2"></i>RTX 4070 Ti / i7</li>
+                <li><i class="bi bi-check2 text-info me-2"></i>DXRacer Comfort Chairs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card custom-card text-center p-3 h-100">
+            <div class="card-body">
+              <h3 class="h4 card-title text-info">Board Games Zone</h3>
+              <p class="display-6 my-3 fw-bold">$2<small class="fs-6 text-secondary">/hour</small></p>
+              <ul class="list-unstyled text-secondary mb-4">
+                <li><i class="bi bi-check2 text-info me-2"></i>Large Tables for 6+ Players</li>
+                <li><i class="bi bi-check2 text-info me-2"></i>50+ Board Game Titles</li>
+                <li><i class="bi bi-check2 text-info me-2"></i>Complimentary Tea & Snacks</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tournament Registration Form Section -->
+    <section class="row justify-content-center my-5">
+      <div class="col-12 col-lg-8">
+        <div class="card custom-card p-4 p-md-5">
+          <h2 class="text-center mb-4 text-uppercase">Tournament Registration</h2>
+          
+          <form action="#" method="POST">
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="nickname" class="form-label">Gamer Tag / Player Name *</label>
+                <input type="text" class="form-control" id="nickname" required placeholder="e.g., ShadowSlayer">
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="email" class="form-label">Email Address *</label>
+                <input type="email" class="form-control" id="email" required placeholder="player@example.com">
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="gameSelect" class="form-label">Select Discipline *</label>
+                <select class="form-select" id="gameSelect" required>
+                  <option value="" selected disabled>Choose a tournament...</option>
+                  <option value="cs2">Counter-Strike 2 (5v5)</option>
+                  <option value="dota2">Dota 2 (5v5)</option>
+                  <option value="valorant">Valorant (5v5)</option>
+                  <option value="board">Board Game (Catan)</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="teamName" class="form-label">Team Name (Optional)</label>
+                <input type="text" class="form-control" id="teamName" placeholder="e.g., CyberDragons">
+              </div>
+
+              <div class="col-12">
+                <label for="comments" class="form-label">Additional Comments / Roster Info</label>
+                <textarea class="form-control" id="comments" rows="3" placeholder="Specify captain contact info or player IDs..."></textarea>
+              </div>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="rulesCheck" required>
+                  <label class="form-check-label text-secondary" for="rulesCheck">
+                    I agree to the tournament rules and guidelines
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-12 text-center mt-4">
+                <button type="submit" class="btn btn-pink w-100 py-3">Submit Registration</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-secondary">
+    <div class="container">
+      <p class="mb-0">&copy; 2026 CYBER ARENA. All rights reserved. Midterm Project WEB Technologies 1.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
