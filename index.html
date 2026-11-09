@@ -6,26 +6,23 @@
   <title>CYBER ARENA — Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Navbar -->
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main">
       <div class="container">
-        <a class="navbar-brand" href="index.html"><i class="bi bi-controller me-2"></i>CYBER ARENA</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <a class="navbar-brand" href="index.html"><i class="bi bi-controller me-2" aria-hidden="true"></i>CYBER ARENA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="register.html">Register & Pricing</a>
-            </li>
+            <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="register.html">Register &amp; Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="booking.html">Book a Seat</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -33,12 +30,26 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
     <section class="hero-section">
       <div class="container">
         <h1 class="hero-title mb-3">Ultimate Esports Arena</h1>
         <p class="lead text-secondary mb-4">Join competitive tournaments, prove your skills, and claim the prize pool!</p>
-        <a href="register.html" class="btn btn-neon">Register for Tournament</a>
+
+        <div class="countdown mb-4" id="countdown" hidden>
+          <p class="countdown-title" id="countdownTitle"></p>
+          <div class="countdown-boxes">
+            <div><span id="cdDays">00</span><small>days</small></div>
+            <div><span id="cdHours">00</span><small>hours</small></div>
+            <div><span id="cdMinutes">00</span><small>min</small></div>
+            <div><span id="cdSeconds">00</span><small>sec</small></div>
+          </div>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#schedule" class="btn btn-neon">See the schedule</a>
+          <a href="register.html" class="btn btn-neon">Register for Tournament</a>
+          <a href="booking.html" class="btn btn-neon">Book a Seat</a>
+        </div>
       </div>
     </section>
 
@@ -46,80 +57,113 @@
       <h2 class="text-center mb-4 text-uppercase">Featured Disciplines</h2>
       <div class="disciplines-grid">
         <div class="custom-card p-3 text-center">
-          <i class="bi bi-crosshair display-4 text-info mb-3"></i>
+          <img src="images/cs2.jpg" class="card-photo" alt="Gamer with headphones playing a shooter game at night">
           <h3 class="h4 card-title">Counter-Strike 2</h3>
           <p class="card-text text-secondary">5v5 Tactical Shooter. High strategy and team coordination.</p>
         </div>
         <div class="custom-card p-3 text-center">
-          <i class="bi bi-shield-shaded display-4 text-info mb-3"></i>
+          <img src="images/dota2.jpg" class="card-photo" alt="Esports team in gaming chairs celebrating a win">
           <h3 class="h4 card-title">Dota 2</h3>
           <p class="card-text text-secondary">Battle for the Ancients. Epic team fights and massive prize pools.</p>
         </div>
         <div class="custom-card p-3 text-center">
-          <i class="bi bi-dice-5 display-4 text-info mb-3"></i>
+          <img src="images/board.games.jpg" class="card-photo" alt="Friends playing a board game at a table">
+          <i class="bi bi-dice-5 display-4 text-info mb-3" aria-hidden="true"></i>
           <h3 class="h4 card-title">Board Games</h3>
           <p class="card-text text-secondary">Cozy tabletop events: Warhammer, Catan, Codenames, and more.</p>
         </div>
       </div>
     </section>
 
-    <!-- TABLE Section  -->
-    <section class="container my-5">
+    <section class="container my-5" id="schedule">
       <h2 class="text-center mb-4 text-uppercase">Upcoming Tournaments</h2>
+
+      <div class="row g-3 mb-3 align-items-end">
+        <div class="col-12 col-md-4">
+          <label for="search" class="form-label">Search by game</label>
+          <input type="search" class="form-control" id="search" maxlength="30" placeholder="e.g., Dota" autocomplete="off">
+        </div>
+        <div class="col-6 col-md-3">
+          <label for="statusFilter" class="form-label">Status</label>
+          <select class="form-select" id="statusFilter">
+            <option value="all">All</option>
+            <option value="open">Registration Open</option>
+            <option value="soon">Coming Soon</option>
+            <option value="full">Full</option>
+            <option value="finished">Finished</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-3">
+          <label for="sortBy" class="form-label">Sort by</label>
+          <select class="form-select" id="sortBy">
+            <option value="date">Date</option>
+            <option value="prize">Prize (high to low)</option>
+            <option value="name">Name (A-Z)</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-2">
+          <button type="button" class="btn btn-outline-neon w-100" id="resetFilters">Reset</button>
+        </div>
+      </div>
+
+      <p class="text-secondary" id="resultInfo" role="status"></p>
+
       <div class="table-responsive">
         <table class="table custom-table table-bordered align-middle text-center">
           <thead>
             <tr>
-              <th>Discipline</th>
-              <th>Date & Time</th>
-              <th>Format</th>
-              <th>Prize Pool</th>
-              <th>Status</th>
+              <th scope="col">Discipline</th>
+              <th scope="col">Date &amp; Time</th>
+              <th scope="col">Format</th>
+              <th scope="col">Prize Pool</th>
+              <th scope="col">Slots</th>
+              <th scope="col">Status</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td><strong>Counter-Strike 2</strong></td>
-              <td>Oct 15, 18:00</td>
-              <td>5 vs 5</td>
-              <td class="text-warning font-weight-bold">150,000 KZT</td>
-              <td><span class="badge bg-success">Registration Open</span></td>
-            </tr>
-            <tr>
-              <td><strong>Dota 2</strong></td>
-              <td>Oct 20, 17:00</td>
-              <td>5 vs 5</td>
-              <td class="text-warning font-weight-bold">200,000 KZT</td>
-              <td><span class="badge bg-success">Registration Open</span></td>
-            </tr>
-            <tr>
-              <td><strong>Valorant</strong></td>
-              <td>Oct 25, 16:00</td>
-              <td>5 vs 5</td>
-              <td class="text-warning font-weight-bold">100,000 KZT</td>
-              <td><span class="badge bg-secondary">Coming Soon</span></td>
-            </tr>
-            <tr>
-              <td><strong>Catan (Board Game)</strong></td>
-              <td>Oct 28, 19:00</td>
-              <td>Solo (1v1v1v1)</td>
-              <td class="text-warning font-weight-bold">Board Game Sets</td>
-              <td><span class="badge bg-success">Registration Open</span></td>
-            </tr>
-          </tbody>
+          <tbody id="tournamentBody"></tbody>
         </table>
+      </div>
+      <div class="empty-state" id="emptyMessage" hidden>
+        <i class="bi bi-search display-5" aria-hidden="true"></i>
+        <p class="mb-0">No tournaments found. Try another name or press Reset.</p>
+      </div>
+    </section>
+
+    <section class="container my-5">
+      <h2 class="text-center mb-4 text-uppercase">Tournament Rules</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <h3 class="h6 m-0"><button type="button" class="faq-question" aria-expanded="false" aria-controls="faq1">Who can take part? <i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3>
+          <div class="faq-answer" id="faq1"><p>Anyone from 14 years old. Team members must register with their own gamer tag.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3 class="h6 m-0"><button type="button" class="faq-question" aria-expanded="false" aria-controls="faq2">How do I register? <i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3>
+          <div class="faq-answer" id="faq2"><p>Open the Register page, fill in the form and choose a tournament with free slots. A team captain registers the whole team.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3 class="h6 m-0"><button type="button" class="faq-question" aria-expanded="false" aria-controls="faq3">Can I train before the tournament? <i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3>
+          <div class="faq-answer" id="faq3"><p>Yes. Book a seat on the Book a Seat page. From 3 hours you get 10% off, and for more than 5 hours you get free drinks.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3 class="h6 m-0"><button type="button" class="faq-question" aria-expanded="false" aria-controls="faq4">How is the prize pool paid? <i class="bi bi-chevron-down" aria-hidden="true"></i></button></h3>
+          <div class="faq-answer" id="faq4"><p>The winners receive the prize on the day of the final. Board game tournaments give game sets and gift cards.</p></div>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="text-center text-secondary">
     <div class="container">
-      <p class="mb-0">&copy; 2026 CYBER ARENA. All rights reserved. Midterm Project WEB Technologies 1.</p>
+      <p class="mb-1">&copy; 2026 CYBER ARENA. All rights reserved. Endterm Project WEB Technologies 1.</p>
+      <p class="small mb-1">Photos: arena — [автор, источник]; Counter-Strike 2 card — [автор, источник]; Dota 2 card — [автор, источник].</p>
+      <p class="small mb-0">Credits: Bootstrap 5.3 and Bootstrap Icons (layout and icons), Google Fonts Orbitron and Inter (fonts), jQuery 3.7 (effects). Code was written with the help of an AI assistant (Claude by Anthropic) and reviewed by the author.</p>
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/tournaments.js"></script>
+  <script src="js/effects.js"></script>
 </body>
 </html>

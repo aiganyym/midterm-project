@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBER ARENA — Contact</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><i class="bi bi-controller me-2" aria-hidden="true"></i>CYBER ARENA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="register.html">Register &amp; Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="booking.html">Book a Seat</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <h1 class="page-title text-center mb-2">About &amp; Contact</h1>
+    <p class="text-center text-secondary mb-5">CYBER ARENA is a gaming lounge and tournament club for esports and board game fans. Come to play, train or just meet friends.</p>
+
+    <section class="row g-4 mb-5">
+      <div class="col-12 col-md-6">
+        <div class="card custom-card p-4 info-card">
+          <h2 class="h4 text-uppercase mb-3">Find us</h2>
+          <ul class="info-list">
+            <li><i class="bi bi-geo-alt" aria-hidden="true"></i><span>Astana, Mangilik El Ave 55/11</span></li>
+            <li><i class="bi bi-telephone" aria-hidden="true"></i><span>+7 777 000 00 00</span></li>
+            <li><i class="bi bi-envelope" aria-hidden="true"></i><span>hello@cyberarena.example</span></li>
+            <li><i class="bi bi-instagram" aria-hidden="true"></i><span>@cyberarena.kz</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="card custom-card p-4 info-card">
+          <h2 class="h4 text-uppercase mb-3">Opening hours</h2>
+          <table class="hours-table">
+            <caption class="visually-hidden">Opening hours</caption>
+            <tbody>
+              <tr><td>Monday – Thursday</td><td>12:00 – 02:00</td></tr>
+              <tr><td>Friday – Saturday</td><td>12:00 – 06:00</td></tr>
+              <tr><td>Sunday</td><td>12:00 – 00:00</td></tr>
+              <tr><td>Tournament days</td><td>10:00 – 23:00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="text-center mb-4 text-uppercase">Map</h2>
+      <iframe class="map-frame" title="Map with the location of CYBER ARENA" loading="lazy"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=71.405%2C51.082%2C71.430%2C51.098&amp;layer=mapnik&amp;marker=51.0897%2C71.4162"></iframe>
+      <p class="text-center small mt-2"><a href="https://www.openstreetmap.org/?mlat=51.0897&amp;mlon=71.4162#map=16/51.0897/71.4162" target="_blank" rel="noopener">Open the larger map</a></p>
+    </section>
+
+    <section class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="card custom-card p-4 p-md-5">
+          <h2 class="text-center mb-4 text-uppercase">Write to us</h2>
+
+          <div class="alert alert-neon" id="successMessage" role="status" style="display:none"></div>
+
+          <form id="contactForm" action="#" method="POST" novalidate>
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="contactName" class="form-label">Your name *</label>
+                <input type="text" class="form-control" id="contactName" name="contactName" autocomplete="name" aria-describedby="err-contactName">
+                <div class="invalid-feedback" id="err-contactName"></div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="contactEmail" class="form-label">Email *</label>
+                <input type="email" class="form-control" id="contactEmail" name="contactEmail" autocomplete="email" aria-describedby="err-contactEmail">
+                <div class="invalid-feedback" id="err-contactEmail"></div>
+              </div>
+              <div class="col-12">
+                <label for="contactTopic" class="form-label">Topic *</label>
+                <select class="form-select" id="contactTopic" name="contactTopic" aria-describedby="err-contactTopic">
+                  <option value="" selected>Choose a topic...</option>
+                  <option value="booking">Booking a seat</option>
+                  <option value="tournament">Tournaments</option>
+                  <option value="partner">Partnership</option>
+                  <option value="other">Something else</option>
+                </select>
+                <div class="invalid-feedback" id="err-contactTopic"></div>
+              </div>
+              <div class="col-12">
+                <label for="contactMessage" class="form-label">Message * (10-300 characters)</label>
+                <textarea class="form-control" id="contactMessage" name="contactMessage" rows="4" aria-describedby="err-contactMessage"></textarea>
+                <div class="invalid-feedback" id="err-contactMessage"></div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-pink w-100 py-3">Send message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center text-secondary">
+    <div class="container">
+      <p class="mb-1">&copy; 2026 CYBER ARENA. All rights reserved. Endterm Project WEB Technologies 1.</p>
+      <p class="small mb-0">Credits: Bootstrap 5.3 and Bootstrap Icons (layout and icons), Google Fonts Orbitron and Inter (fonts), jQuery 3.7 (effects). Code was written with the help of an AI assistant (Claude by Anthropic) and reviewed by the author.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/effects.js"></script>
+</body>
+</html>

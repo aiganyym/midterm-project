@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBER ARENA — Book a Seat</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><i class="bi bi-controller me-2" aria-hidden="true"></i>CYBER ARENA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="register.html">Register &amp; Pricing</a></li>
+            <li class="nav-item"><a class="nav-link active" href="booking.html" aria-current="page">Book a Seat</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <h1 class="page-title text-center mb-2">Book Your Seat</h1>
+    <p class="text-center text-secondary mb-4">Pick your place on the arena floor plan, choose the time and get your booking code. Book 3 hours or more and get 10% off. Book more than 5 hours and get free drinks.</p>
+
+    <div class="row g-4">
+      <div class="col-12 col-lg-7">
+        <div class="floor-plan">
+          <div class="entrance"><i class="bi bi-door-open me-2" aria-hidden="true"></i>ENTRANCE</div>
+          <div id="seatMap"></div>
+          <ul class="legend list-unstyled" aria-label="Legend">
+            <li><span class="legend-box"></span> Free</li>
+            <li><span class="legend-box selected"></span> Selected</li>
+            <li><span class="legend-box taken"></span> Taken</li>
+          </ul>
+        </div>
+        <p class="seat-error" id="seatError" role="alert"></p>
+      </div>
+
+      <div class="col-12 col-lg-5">
+        <div class="card custom-card p-4 sticky-panel">
+          <h2 class="h4 text-uppercase">Your booking</h2>
+          <p class="small text-secondary" id="seatMessage" role="status">Choose up to 6 seats.</p>
+          <ul class="summary-list list-unstyled" id="summaryList"></ul>
+          <p class="discount-row" id="discountRow" hidden><i class="bi bi-stars me-1" aria-hidden="true"></i>10% discount for 3 hours or more is applied</p>
+          <p class="perk-row" id="perkRow" hidden><i class="bi bi-cup-hot me-1" aria-hidden="true"></i>More than 5 hours: free drinks (tea, coffee or soda) for every player and a snack combo are included!</p>
+          <p class="total-row">Total: <del class="old-price" id="oldTotal" hidden></del> <strong id="total">$0.00</strong> <span class="save-badge" id="saveBadge" hidden>-10%</span></p>
+          <button type="button" class="btn btn-outline-neon mb-3" id="clearSeats" disabled>Clear selection</button>
+
+          <div class="alert alert-neon" id="successMessage" role="status" style="display:none"></div>
+
+          <form id="bookingForm" action="#" method="POST" novalidate>
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="fullName" class="form-label">Your name *</label>
+                <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Aiganym" autocomplete="name" aria-describedby="err-fullName">
+                <div class="invalid-feedback" id="err-fullName"></div>
+              </div>
+              <div class="col-12">
+                <label for="phone" class="form-label">Phone *</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="+7 777 123 45 67" autocomplete="tel" aria-describedby="err-phone">
+                <div class="invalid-feedback" id="err-phone"></div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <label for="date" class="form-label">Date *</label>
+                <input type="date" class="form-control" id="date" name="date" aria-describedby="err-date">
+                <div class="invalid-feedback" id="err-date"></div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <label for="time" class="form-label">Start time *</label>
+                <input type="time" class="form-control" id="time" name="time" aria-describedby="err-time">
+                <div class="invalid-feedback" id="err-time"></div>
+              </div>
+              <div class="col-12">
+                <label for="hours" class="form-label">Hours (1-8) *</label>
+                <input type="number" class="form-control" id="hours" name="hours" value="1" inputmode="numeric" aria-describedby="err-hours">
+                <div class="invalid-feedback" id="err-hours"></div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-pink w-100 py-3">Book now</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center text-secondary">
+    <div class="container">
+      <p class="mb-1">&copy; 2026 CYBER ARENA. All rights reserved. Endterm Project WEB Technologies 1.</p>
+      <p class="small mb-0">Credits: Bootstrap 5.3 and Bootstrap Icons (layout and icons), Google Fonts Orbitron and Inter (fonts), jQuery 3.7 (effects). Code was written with the help of an AI assistant (Claude by Anthropic) and reviewed by the author.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/seatmap.js"></script>
+  <script src="js/effects.js"></script>
+</body>
+</html>
