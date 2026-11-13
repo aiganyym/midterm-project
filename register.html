@@ -1,28 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CYBER ARENA — Register</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
 </head>
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main">
+    <nav class="navbar navbar-expand-lg sticky-top" aria-label="Main">
       <div class="container">
         <a class="navbar-brand" href="index.html"><i class="bi bi-controller me-2" aria-hidden="true"></i>CYBER ARENA</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" href="register.html" aria-current="page">Register &amp; Pricing</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="register.html">Register &amp; Pricing</a></li>
             <li class="nav-item"><a class="nav-link" href="booking.html">Book a Seat</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item" data-auth="guest"><a class="nav-link" href="login.html">Log In</a></li>
+            <li class="nav-item" data-auth="guest"><a class="nav-link" href="signup.html">Sign Up</a></li>
+            <li class="nav-item" data-auth="user" hidden><a class="nav-link" href="profile.html"><i class="bi bi-person-circle me-1" aria-hidden="true"></i><span id="navUserName"></span> <span class="badge nav-count" id="navCount" hidden>0</span></a></li>
+            <li class="nav-item" data-auth="user" hidden><button type="button" class="nav-link" id="logoutBtn">Log Out</button></li>
+            <li class="nav-item"><button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" title="Light mode"><i class="bi bi-sun-fill" aria-hidden="true"></i></button></li>
           </ul>
         </div>
       </div>
@@ -38,12 +44,12 @@
         <div class="col-12 col-md-4">
           <div class="card custom-card text-center p-3 h-100">
             <div class="card-body">
-              <h3 class="h4 card-title text-info">Standard Zone</h3>
+              <h3 class="h4 card-title text-accent">Standard Zone</h3>
               <p class="display-6 my-3 fw-bold">$3<small class="fs-6 text-secondary">/hour</small></p>
               <ul class="list-unstyled text-secondary mb-4">
-                <li><i class="bi bi-check2 text-info me-2" aria-hidden="true"></i>Full HD 144Hz Monitors</li>
-                <li><i class="bi bi-check2 text-info me-2" aria-hidden="true"></i>RTX 3060 / i5</li>
-                <li><i class="bi bi-check2 text-info me-2" aria-hidden="true"></i>HyperX Gaming Gear</li>
+                <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>Full HD 144Hz Monitors</li>
+                <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>RTX 3060 / i5</li>
+                <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>HyperX Gaming Gear</li>
               </ul>
             </div>
           </div>
@@ -52,12 +58,12 @@
           <div class="card custom-card text-center p-3 h-100 border-info">
             <div class="card-body">
               <span class="badge bg-danger mb-2">POPULAR</span>
-              <h3 class="h4 card-title text-info">VIP Lounge</h3>
+              <h3 class="h4 card-title text-accent">VIP Lounge</h3>
               <p class="display-6 my-3 fw-bold">$5<small class="fs-6 text-secondary">/hour</small></p>
               <ul class="list-unstyled text-secondary mb-4">
-                <li><i class="bi bi-check2 text-info me-2" aria-hidden="true"></i>2K 240Hz Monitors</li>
-                <li><i class="bi bi-check2 text-info me-2" aria-hidden="true"></i>RTX 4070 Ti / i7</li>
-                <li><i class="bi bi-check2 text-info me-2" aria-hidden="true"></i>DXRacer Comfort Chairs</li>
+                <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>2K 240Hz Monitors</li>
+                <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>RTX 4070 Ti / i7</li>
+                <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>DXRacer Comfort Chairs</li>
               </ul>
             </div>
           </div>
@@ -65,12 +71,12 @@
         <div class="col-12 col-md-4">
           <div class="card custom-card text-center p-3 h-100">
             <div class="card-body">
-              <h3 class="h4 card-title text-info">Board Games Zone</h3>
+              <h3 class="h4 card-title text-accent">Board Games Zone</h3>
               <p class="display-6 my-3 fw-bold">$2<small class="fs-6 text-secondary">/hour</small></p>
               <ul class="list-unstyled text-secondary mb-4">
-                <li><i class="bi bi-check2 text-info me-2" aria-hidden="true"></i>Large Tables for 6+ Players</li>
-                <li><i class="bi bi-check2 text-info me-2" aria-hidden="true"></i>50+ Board Game Titles</li>
-                <li><i class="bi bi-check2 text-info me-2" aria-hidden="true"></i>Complimentary Tea &amp; Snacks</li>
+                <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>Large Tables for 6+ Players</li>
+                <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>50+ Board Game Titles</li>
+                <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>Complimentary Tea &amp; Snacks</li>
               </ul>
             </div>
           </div>
@@ -86,7 +92,7 @@
 
           <div class="alert alert-neon" id="successMessage" role="status" style="display:none"></div>
 
-          <form id="registerForm" action="#" method="POST" novalidate>
+          <form id="registerForm" novalidate>
             <div class="row g-3">
               <div class="col-12 col-md-6">
                 <label for="nickname" class="form-label">Gamer Tag / Player Name *</label>
@@ -146,14 +152,16 @@
 
   <footer class="text-center text-secondary">
     <div class="container">
-      <p class="mb-1">&copy; 2026 CYBER ARENA. All rights reserved. Endterm Project WEB Technologies 1.</p>
+      <p class="mb-1">&copy; 2026 CYBER ARENA. All rights reserved. Final Project WEB Technologies 1.</p>
       <p class="small mb-0">Credits: Bootstrap 5.3 and Bootstrap Icons (layout and icons), Google Fonts Orbitron and Inter (fonts), jQuery 3.7 (effects). Code was written with the help of an AI assistant (Claude by Anthropic) and reviewed by the author.</p>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/storage.js"></script>
   <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
   <script src="js/validation.js"></script>
   <script src="js/register.js"></script>
   <script src="js/effects.js"></script>
