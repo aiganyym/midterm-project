@@ -16,10 +16,10 @@ const ZONES = {
 };
 
 const STATUS_BADGES = {
-  open: { text: 'Registration Open', cls: 'bg-success' },
-  soon: { text: 'Coming Soon', cls: 'bg-secondary' },
-  full: { text: 'Full', cls: 'bg-danger' },
-  finished: { text: 'Finished', cls: 'bg-dark border' }
+  open: { text: 'Registration Open', cls: 'status-open' },
+  soon: { text: 'Coming Soon', cls: 'status-soon' },
+  full: { text: 'Full', cls: 'status-full' },
+  finished: { text: 'Finished', cls: 'status-finished' }
 };
 
 const MAX_SEATS = 6;

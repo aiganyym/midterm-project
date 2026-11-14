@@ -96,7 +96,7 @@ function renderTable() {
 
     const badge = document.createElement('span');
     const info = STATUS_BADGES[statusOf(t)];
-    badge.className = 'badge ' + info.cls;
+    badge.className = 'badge status-badge ' + info.cls;
     badge.textContent = info.text;
 
     tr.append(
