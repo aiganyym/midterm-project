@@ -35,59 +35,146 @@
     </nav>
   </header>
 
-  <main class="container my-5">
-    <h1 class="page-title text-center mb-4">Register &amp; Pricing</h1>
+  <main>
+    <section class="hero-section page-banner">
+      <div class="container">
+        <h1 class="hero-title mb-3">Register &amp; Pricing</h1>
+        <p class="lead mb-4">Choose your zone, check the price and join a tournament in a minute.</p>
+        <div class="row g-3 justify-content-center hero-stats">
+          <div class="col-4 col-md-3"><div class="stat-box"><strong id="statOpen">0</strong><span>Open tournaments</span></div></div>
+          <div class="col-4 col-md-3"><div class="stat-box"><strong id="statSlots">0</strong><span>Free slots</span></div></div>
+          <div class="col-4 col-md-3"><div class="stat-box"><strong id="statPrize">0</strong><span>Prize pool, KZT</span></div></div>
+        </div>
+      </div>
+    </section>
 
-    <section class="mb-5">
-      <h2 class="text-center mb-4 text-uppercase">Gaming Lounge Rates</h2>
-      <div class="row g-4">
+    <div class="container my-5">
+      <section class="mb-5" aria-labelledby="ratesTitle">
+        <h2 class="text-center mb-4 text-uppercase" id="ratesTitle">Gaming Lounge Rates</h2>
+        <div class="row g-4">
         <div class="col-12 col-md-4">
-          <div class="card custom-card text-center p-3 h-100">
-            <div class="card-body">
+          <article class="card custom-card zone-card h-100">
+            <img src="images/cs2.jpg" class="zone-photo" alt="Gamer with headphones playing at a monitor">
+            <div class="card-body text-center">
               <h3 class="h4 card-title text-accent">Standard Zone</h3>
-              <p class="display-6 my-3 fw-bold">$3<small class="fs-6 text-secondary">/hour</small></p>
-              <ul class="list-unstyled text-secondary mb-4">
+              <p class="display-6 my-2 fw-bold">$3<small class="fs-6 text-secondary">/hour</small></p>
+              <ul class="list-unstyled text-secondary mb-3">
                 <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>Full HD 144Hz Monitors</li>
                 <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>RTX 3060 / i5</li>
                 <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>HyperX Gaming Gear</li>
               </ul>
+              <a href="booking.html" class="btn btn-outline-neon w-100">Book in this zone</a>
             </div>
-          </div>
+          </article>
         </div>
         <div class="col-12 col-md-4">
-          <div class="card custom-card text-center p-3 h-100 border-info">
-            <div class="card-body">
+          <article class="card custom-card zone-card h-100 zone-popular">
+            <img src="images/dota2.jpg" class="zone-photo" alt="Esports team sitting in gaming chairs">
+            <div class="card-body text-center">
               <span class="badge bg-danger mb-2">POPULAR</span>
               <h3 class="h4 card-title text-accent">VIP Lounge</h3>
-              <p class="display-6 my-3 fw-bold">$5<small class="fs-6 text-secondary">/hour</small></p>
-              <ul class="list-unstyled text-secondary mb-4">
+              <p class="display-6 my-2 fw-bold">$5<small class="fs-6 text-secondary">/hour</small></p>
+              <ul class="list-unstyled text-secondary mb-3">
                 <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>2K 240Hz Monitors</li>
                 <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>RTX 4070 Ti / i7</li>
                 <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>DXRacer Comfort Chairs</li>
               </ul>
+              <a href="booking.html" class="btn btn-outline-neon w-100">Book in this zone</a>
             </div>
-          </div>
+          </article>
         </div>
         <div class="col-12 col-md-4">
-          <div class="card custom-card text-center p-3 h-100">
-            <div class="card-body">
+          <article class="card custom-card zone-card h-100">
+            <img src="images/board.games.jpg" class="zone-photo" alt="Board games on a table">
+            <div class="card-body text-center">
               <h3 class="h4 card-title text-accent">Board Games Zone</h3>
-              <p class="display-6 my-3 fw-bold">$2<small class="fs-6 text-secondary">/hour</small></p>
-              <ul class="list-unstyled text-secondary mb-4">
+              <p class="display-6 my-2 fw-bold">$2<small class="fs-6 text-secondary">/hour</small></p>
+              <ul class="list-unstyled text-secondary mb-3">
                 <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>Large Tables for 6+ Players</li>
                 <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>50+ Board Game Titles</li>
                 <li><i class="bi bi-check2 text-accent me-2" aria-hidden="true"></i>Complimentary Tea &amp; Snacks</li>
               </ul>
+              <a href="booking.html" class="btn btn-outline-neon w-100">Book in this zone</a>
+            </div>
+          </article>
+        </div>
+        </div>
+        <p class="text-center mt-4"><a href="booking.html" class="btn btn-neon">Choose your seat on the map</a></p>
+      </section>
+
+      <section class="mb-5" aria-labelledby="calcTitle">
+        <h2 class="text-center mb-4 text-uppercase" id="calcTitle">Price Calculator</h2>
+        <div class="card custom-card calc-card p-4">
+          <div class="row g-4">
+            <div class="col-12 col-lg-6">
+              <div class="row g-3">
+                <div class="col-12">
+                  <label for="calcZone" class="form-label">Zone</label>
+                  <select class="form-select" id="calcZone"></select>
+                </div>
+                <div class="col-6">
+                  <label for="calcSeats" class="form-label">Seats (1-6)</label>
+                  <input type="number" class="form-control" id="calcSeats" value="2" inputmode="numeric" aria-describedby="err-calcSeats">
+                  <div class="invalid-feedback" id="err-calcSeats"></div>
+                </div>
+                <div class="col-6">
+                  <label for="calcHours" class="form-label">Hours (1-8)</label>
+                  <input type="number" class="form-control" id="calcHours" value="3" inputmode="numeric" aria-describedby="err-calcHours">
+                  <div class="invalid-feedback" id="err-calcHours"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="calc-result" role="status" aria-live="polite">
+                <p class="text-secondary small mb-2" id="calcPerHour"></p>
+                <p class="total-row mb-2">Total: <del class="old-price" id="calcOld" hidden></del> <strong id="calcTotal">$0.00</strong> <span class="save-badge" id="calcSave" hidden>-10%</span></p>
+                <p class="perk-row" id="calcPerk" hidden><i class="bi bi-cup-hot me-1" aria-hidden="true"></i>Free drinks and a snack combo are included!</p>
+                <p class="calc-tip mb-3" id="calcTip"></p>
+              </div>
+              <a href="booking.html" class="btn btn-pink">Book these seats</a>
             </div>
           </div>
         </div>
-      </div>
-      <p class="text-center mt-4"><a href="booking.html" class="btn btn-neon">Choose your seat on the map</a></p>
-    </section>
+      </section>
 
-    <section class="row justify-content-center my-5">
+      <section class="mb-5" aria-labelledby="openTitle">
+        <h2 class="text-center mb-4 text-uppercase" id="openTitle">Open Tournaments</h2>
+        <div class="row g-4" id="openList"></div>
+        <div class="empty-state" id="openEmpty" hidden>
+          <i class="bi bi-trophy display-5" aria-hidden="true"></i>
+          <p class="mb-0">All tournaments are full right now. Check the <a class="text-accent" href="index.html#schedule">schedule</a> for new dates.</p>
+        </div>
+      </section>
+
+      <section class="mb-5" aria-labelledby="stepsTitle">
+        <h2 class="text-center mb-4 text-uppercase" id="stepsTitle">How It Works</h2>
+        <ol class="steps list-unstyled">
+        <li class="step">
+          <span class="step-icon"><i class="bi bi-hand-index-thumb" aria-hidden="true"></i></span>
+          <h3 class="h6">Choose</h3>
+          <p class="small text-secondary mb-0">Pick an open tournament in the list.</p>
+        </li>
+        <li class="step">
+          <span class="step-icon"><i class="bi bi-pencil-square" aria-hidden="true"></i></span>
+          <h3 class="h6">Register</h3>
+          <p class="small text-secondary mb-0">Fill in the form. We check every field.</p>
+        </li>
+        <li class="step">
+          <span class="step-icon"><i class="bi bi-pc-display" aria-hidden="true"></i></span>
+          <h3 class="h6">Warm up</h3>
+          <p class="small text-secondary mb-0">Book a seat and train before the match.</p>
+        </li>
+        <li class="step">
+          <span class="step-icon"><i class="bi bi-trophy" aria-hidden="true"></i></span>
+          <h3 class="h6">Win</h3>
+          <p class="small text-secondary mb-0">Play your best and claim the prize pool.</p>
+        </li>
+        </ol>
+      </section>
+
+    <section class="row justify-content-center my-5" id="register">
       <div class="col-12 col-lg-8">
-        <div class="card custom-card p-4 p-md-5">
+        <div class="card custom-card p-4 p-md-5" id="registerCard">
           <h2 class="text-center mb-4 text-uppercase">Tournament Registration</h2>
 
           <div class="alert alert-neon" id="successMessage" role="status" style="display:none"></div>
@@ -148,6 +235,7 @@
         </div>
       </div>
     </section>
+    </div>
   </main>
 
   <footer class="text-center text-secondary">
@@ -164,6 +252,7 @@
   <script src="js/auth.js"></script>
   <script src="js/validation.js"></script>
   <script src="js/register.js"></script>
+  <script src="js/pricing.js"></script>
   <script src="js/effects.js"></script>
 </body>
 </html>

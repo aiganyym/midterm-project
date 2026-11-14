@@ -1,8 +1,3 @@
-const MAX_SEATS = 6;
-const DISCOUNT_FROM_HOURS = 3;
-const DISCOUNT = 0.1;
-const FREE_DRINKS_AFTER_HOURS = 5;
-
 const mapBox = document.getElementById('seatMap');
 const summaryList = document.getElementById('summaryList');
 const hoursInput = document.getElementById('hours');
@@ -37,14 +32,8 @@ function calculateTotal() {
     perHour += findSeat(id).price;
   });
   const hours = getHours();
-  const full = perHour * hours;
-  let total = full;
-  const discounted = hours >= DISCOUNT_FROM_HOURS && selected.length > 0;
-  if (discounted) {
-    total = full * (1 - DISCOUNT);
-  }
-  const freeDrinks = hours > FREE_DRINKS_AFTER_HOURS && selected.length > 0;
-  return { perHour: perHour, hours: hours, full: full, total: total, discounted: discounted, freeDrinks: freeDrinks };
+  const result = priceFor(perHour, hours);
+  return { perHour: perHour, hours: hours, full: result.full, total: result.total, discounted: result.discounted, freeDrinks: result.freeDrinks };
 }
 
 function makeSeatButton(seat) {

@@ -26,39 +26,61 @@
   --zone-bg: rgba(0, 0, 0, 0.2);
   --nav-bg: rgba(22, 27, 34, 0.95);
   --hero-top: rgba(11, 14, 20, 0.75);
+  --hero-mid: rgba(11, 14, 20, 0.94);
   --hero-bottom: rgba(11, 14, 20, 1);
   --glow-text: 0 0 15px rgba(0, 240, 255, 0.6);
   --glow-gold: 0 0 10px rgba(245, 179, 1, 0.5);
+  --footer-text: #8b949e;
+  --card-shadow: none;
+  --hero-title: #00f0ff;
+  --hero-lead: #c9d1d9;
+  --hero-btn: #00f0ff;
+  --hero-btn-text: #0b0e14;
+  --cd-box: #161b22;
+  --cd-num: #00f0ff;
+  --cd-label: #8b949e;
+  --hero-text-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
 }
 
 [data-bs-theme="light"] {
   color-scheme: light;
-  --bg: #f4f7fb;
+  --bg: #f1eefb;
   --card-bg: #ffffff;
   --surface: #ffffff;
-  --surface-2: #e6edf5;
-  --footer-bg: #e6edf5;
-  --text: #14202e;
-  --text-soft: #2d3b4d;
-  --muted: #4f5d70;
-  --placeholder: #66748a;
-  --accent: #00718a;
-  --accent-rgb: 0, 113, 138;
+  --surface-2: #e6e0f8;
+  --footer-bg: #1b1740;
+  --text: #1b1740;
+  --text-soft: #34305a;
+  --muted: #55517a;
+  --placeholder: #6f6b94;
+  --accent: #00728f;
+  --accent-rgb: 0, 114, 143;
   --on-accent: #ffffff;
   --accent-pink: #d6004a;
   --pink-rgb: 214, 0, 74;
   --pink-hover: #b30040;
-  --gold: #8a5a00;
-  --gold-rgb: 138, 90, 0;
+  --gold: #b45309;
+  --gold-rgb: 180, 83, 9;
   --error-text: #b4003c;
-  --line: rgba(20, 32, 46, 0.14);
-  --line-strong: rgba(20, 32, 46, 0.35);
-  --zone-bg: rgba(20, 32, 46, 0.04);
-  --nav-bg: rgba(255, 255, 255, 0.96);
-  --hero-top: rgba(244, 247, 251, 0.82);
-  --hero-bottom: rgba(244, 247, 251, 1);
+  --line: rgba(27, 23, 64, 0.14);
+  --line-strong: rgba(27, 23, 64, 0.35);
+  --zone-bg: rgba(90, 60, 200, 0.06);
+  --nav-bg: rgba(255, 255, 255, 0.94);
+  --hero-top: rgba(27, 23, 64, 0.62);
+  --hero-mid: rgba(27, 23, 64, 0.5);
+  --hero-bottom: #f1eefb;
   --glow-text: none;
   --glow-gold: none;
+  --footer-text: #cfcaf0;
+  --card-shadow: 0 2px 12px rgba(27, 23, 64, 0.08);
+  --hero-title: #ffffff;
+  --hero-lead: #ece9ff;
+  --hero-btn: #ffffff;
+  --hero-btn-text: #1b1740;
+  --cd-box: rgba(27, 23, 64, 0.6);
+  --cd-num: #7df3ff;
+  --cd-label: #d9d4f7;
+  --hero-text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
 }
 
 body {
@@ -98,15 +120,15 @@ h1, h2, h3, .navbar-brand {
 
 /* Hero Section */
 .hero-section {
-  padding: 80px 0 60px;
-  background: linear-gradient(180deg, var(--hero-top) 0%, var(--hero-bottom) 100%),
+  padding: 80px 0 90px;
+  background: linear-gradient(180deg, var(--hero-top) 0%, var(--hero-mid) 78%, var(--hero-bottom) 100%),
               url('../images/arena.jpg') center / cover no-repeat;
   text-align: center;
 }
 
 .hero-title {
-  color: var(--accent);
-  text-shadow: var(--glow-text);
+  color: var(--hero-title);
+  text-shadow: var(--hero-text-shadow);
   font-size: 1.5rem; 
 }
 
@@ -130,6 +152,7 @@ h1, h2, h3, .navbar-brand {
   background-color: var(--card-bg);
   border: 1px solid rgba(var(--accent-rgb), 0.2);
   border-radius: 12px;
+  box-shadow: var(--card-shadow);
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -274,7 +297,7 @@ button:focus-visible,
 
 /* Countdown */
 .countdown-title {
-  color: var(--text);
+  color: var(--hero-lead);
   margin-bottom: 12px;
 }
 
@@ -287,7 +310,7 @@ button:focus-visible,
 .countdown-boxes div {
   min-width: 68px;
   padding: 10px 6px;
-  background: var(--card-bg);
+  background: var(--cd-box);
   border: 1px solid rgba(var(--accent-rgb), 0.4);
   border-radius: 10px;
   box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.2);
@@ -297,11 +320,11 @@ button:focus-visible,
   display: block;
   font-family: 'Orbitron', sans-serif;
   font-size: 1.6rem;
-  color: var(--accent);
+  color: var(--cd-num);
 }
 
 .countdown-boxes small {
-  color: var(--muted);
+  color: var(--cd-label);
 }
 
 /* Table, search, empty state */
@@ -358,6 +381,7 @@ button:focus-visible,
 }
 
 .faq-item {
+  box-shadow: var(--card-shadow);
   margin-bottom: 10px;
   background: var(--card-bg);
   border: 1px solid rgba(var(--accent-rgb), 0.2);
@@ -432,6 +456,7 @@ input[type="date"], input[type="time"] {
 
 /* Seat map */
 .floor-plan {
+  box-shadow: var(--card-shadow);
   padding: 16px;
   background: var(--card-bg);
   border: 1px solid rgba(var(--accent-rgb), 0.2);
@@ -662,7 +687,17 @@ input[type="date"], input[type="time"] {
 }
 
 .hero-section .lead {
-  color: var(--text-soft) !important;
+  color: var(--hero-lead) !important;
+}
+
+.hero-section .btn-neon {
+  color: var(--hero-btn);
+  border-color: var(--hero-btn);
+}
+
+.hero-section .btn-neon:hover {
+  background-color: var(--hero-btn);
+  color: var(--hero-btn-text);
 }
 
 /* Old price, new price, perks */
@@ -759,8 +794,10 @@ body {
   color: var(--gold) !important;
 }
 
-footer {
-  color: var(--muted);
+footer,
+footer.text-secondary,
+footer .text-secondary {
+  color: var(--footer-text) !important;
 }
 
 /* Navigation: account, counter, theme toggle */
@@ -948,6 +985,7 @@ footer {
 }
 
 .saved-item {
+  box-shadow: var(--card-shadow);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -1014,4 +1052,145 @@ footer {
   .remove-btn {
     width: 100%;
   }
+}
+
+/* Register & Pricing page */
+.page-banner {
+  padding: 60px 0 80px;
+}
+
+.hero-stats .stat-box {
+  background: var(--cd-box);
+  border-color: rgba(var(--accent-rgb), 0.4);
+}
+
+.hero-stats .stat-box strong {
+  color: var(--cd-num);
+}
+
+.hero-stats .stat-box span {
+  color: var(--cd-label);
+}
+
+.zone-card {
+  overflow: hidden;
+}
+
+.zone-photo {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.zone-popular {
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 14px rgba(var(--pink-rgb), 0.25);
+}
+
+.calc-card {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.calc-result {
+  padding: 14px;
+  margin-bottom: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.calc-tip {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  min-height: 22px;
+}
+
+.tour-card {
+  position: relative;
+  height: 100%;
+  padding: 18px;
+  background: var(--card-bg);
+  border: 1px solid rgba(var(--accent-rgb), 0.25);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tour-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 0 14px rgba(var(--accent-rgb), 0.3);
+}
+
+.tour-card.chosen {
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 14px rgba(var(--pink-rgb), 0.35);
+}
+
+.tour-tag {
+  margin-bottom: 8px;
+  background: rgba(var(--accent-rgb), 0.15);
+  color: var(--accent);
+}
+
+.tour-prize {
+  margin-bottom: 10px;
+  color: var(--gold);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.tour-card .btn-neon {
+  margin-top: 0;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 0;
+  counter-reset: step;
+}
+
+@media (min-width: 768px) {
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.step {
+  position: relative;
+  padding: 20px 14px;
+  text-align: center;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+.step::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  color: var(--muted);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+}
+
+.step-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: rgba(var(--accent-rgb), 0.15);
+  color: var(--accent);
+  font-size: 1.5rem;
 }

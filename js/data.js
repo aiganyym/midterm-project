@@ -22,6 +22,11 @@ const STATUS_BADGES = {
   finished: { text: 'Finished', cls: 'bg-dark border' }
 };
 
+const MAX_SEATS = 6;
+const DISCOUNT_FROM_HOURS = 3;
+const DISCOUNT = 0.1;
+const FREE_DRINKS_AFTER_HOURS = 5;
+
 const PRESET_TAKEN = ['S3', 'S4', 'S7', 'V2', 'V5', 'B6'];
 
 const SEATS = [];
@@ -59,6 +64,17 @@ SEATS.forEach(function (s) {
     s.taken = true;
   }
 });
+
+function priceFor(perHour, hours) {
+  const full = perHour * hours;
+  const discounted = hours >= DISCOUNT_FROM_HOURS && perHour > 0;
+  return {
+    full: full,
+    total: discounted ? full * (1 - DISCOUNT) : full,
+    discounted: discounted,
+    freeDrinks: hours > FREE_DRINKS_AFTER_HOURS && perHour > 0
+  };
+}
 
 function statusOf(t) {
   if (new Date(t.date) < new Date()) {

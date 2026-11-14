@@ -79,6 +79,8 @@ initForm(registerForm, registerRules, function () {
   } else {
     option.textContent = tournament.game + ' (' + tournament.format + ') — ' + (tournament.slots - tournament.taken) + ' slots left';
   }
+  renderOpenCards();
+  updateStats(false);
 });
 
 prefillForm(registerForm, { email: 'email' });
